@@ -1,3 +1,4 @@
+import os
 import time
 import re
 import random
@@ -38,7 +39,6 @@ def analyse_text(user_words, task_words, task_time) -> dict:
     return analyse
 
 def gameloop(words) -> int:
-
     amount = input("Введите желаемое количество слов: ")
     if amount == "":
         print("Спасибо за игру!!")
@@ -53,14 +53,18 @@ def gameloop(words) -> int:
 
     task_words = random_words(words, amount)
     task = ' '.join(task_words)
+    os.system("cls")
     print(f"\n{task}\n")
     time.sleep(2)
 
     for i in range(3, 0, -1):
         print(f"{i}...")
         time.sleep(2)
-    print("Старт!!!")
-    
+
+    os.system("cls")
+    print(f"{task}\n")
+    print("Старт!!!\n")
+
     time_start = time.time()
     user_words = input().split(" ")
     time_finish = time.time()
@@ -75,15 +79,16 @@ def gameloop(words) -> int:
         + f"Время на одно слово: {analyse["timePerWord"]}c\n")
 
 def main(encoding) -> int:
-
-    print("\nЗагрузка слов...")
+    os.system("cls")
+    print("Загрузка слов...")
     words = read_text(encoding)
 
     lenwords = len(words)
     if lenwords == 0:
+        os.system("cls")
         print("Возникла ошибка, проверьте words.txt")
         return 1
-    print("Слова успешно загруженны")
+    print("Слова успешно загруженны\n")
 
     while True:
         game = gameloop(words)
