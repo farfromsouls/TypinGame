@@ -1,11 +1,9 @@
-Данный проект был реализован при поддержке отключения света в моём районе.
+### IMPORTANT:
 
-### ВАЖНО:
+- Upload your word list to words.txt (separators are space and \n)
 
- - Загружайте свой список слов в words.txt (разделитель - пробел и \n) 
+- Use start.bat to launch
 
- - Для запуска используйте start.bat
+- Before starting, make sure your Python interpreter is added to PATH
 
- - Перед запуском убедитесь, что ваш python интерпритатор указан в PATH.  
-
- - При ошибках в вызове интерпритатора python, измените в последней строке start.bat "python" на ваш текущий интерпритатор (с полным путем)
+- If you encounter Python interpreter errors, change "python" in the last line of start.bat to your current interpreter (with full path)
